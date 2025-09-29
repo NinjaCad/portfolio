@@ -67,6 +67,7 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.4);
             margin-bottom: 30px;
             transition: transform 0.2s, box-shadow 0.2s;
+            text-align: left;  /* Left-align all text inside the card */
         }
 
         .card:hover {
@@ -74,7 +75,7 @@
             box-shadow: 0 12px 20px rgba(0,0,0,0.6);
         }
 
-        /* Flex layout for Experience & Education */
+        /* Flex layout for Experience, Education, Certificates */
         .item-flex {
             display: flex;
             align-items: flex-start;
@@ -94,11 +95,14 @@
             flex: 1;
         }
 
-        ul {
-            padding-left: 20px;
-            margin: 5px 0 10px 0;
-            list-style-position: inside; 
-         }
+        /* Bullet points aligned left */
+        .item-flex ul {
+            list-style-position: outside;
+            margin-left: 20px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            padding-left: 0;
+        }
 
         /* Contact Info */
         .contact-info i {
@@ -110,7 +114,7 @@
             .item-flex {
                 flex-direction: column;
                 align-items: center;
-                text-align: center;
+                text-align: left;
             }
             .item-flex img {
                 margin-bottom: 10px;
@@ -130,6 +134,7 @@
         <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
         <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PROJECTS</a>
         <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
+        <a href="#certificates" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CERTIFICATES</a>
         <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
     </div>
 </div>
@@ -138,6 +143,7 @@
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
     <a href="#projects" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">PROJECTS</a>
     <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">ABOUT</a>
+    <a href="#certificates" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">CERTIFICATES</a>
     <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">CONTACT</a>
 </div>
 
@@ -147,7 +153,7 @@
     <!-- Title Section -->
     <div class="center-container" style="padding-bottom: 60px;">
         <h1 class="w3-wide">Caedmon Julian</h1>
-        <p>TMU Computer Science Student | Game/Web Developer | AI Enthusiast</p>
+        <p>Computer Science Student | AI Enthusiast | Developer</p>
     </div>
 
     <!-- Projects Section -->
@@ -181,8 +187,7 @@
             <img src="sixflags-logo.png" alt="Six Flags">
             <div>
                 <p><strong>Six Flags – Food And Beverage Team Member</strong><br>
-                March 2024 – August 2025<br>
-                Santa Clarita, CA</p>
+                March 2024 – August 2025 | Santa Clarita, CA</p>
             </div>
         </div>
 
@@ -195,7 +200,7 @@
                 <ul>
                     <li>Bachelor's Degree | Computer Science</li>
                     <li>Emphasis in Artificial Intelligence</li>
-                    <li>Currentenly Enrolled</li>
+                    <li>Current Student</li>
                 </ul>
             </div>
         </div>
@@ -208,6 +213,32 @@
                     <li>AP Scholar with Honor Award</li>
                     <li>Awards from CSF and NHS</li>
                 </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificates Section -->
+    <div id="certificates" class="center-container" style="padding-top: 60px;">
+        <h2 class="w3-wide">CERTIFICATES</h2>
+
+        <div class="card item-flex">
+            <img src="certificate1-logo.png" alt="Certificate 1">
+            <div>
+                <p><strong>Machine Learning Specialization</strong><br>Issued by Coursera | 2024</p>
+            </div>
+        </div>
+
+        <div class="card item-flex">
+            <img src="certificate2-logo.png" alt="Certificate 2">
+            <div>
+                <p><strong>Front-End Web Development</strong><br>Issued by freeCodeCamp | 2023</p>
+            </div>
+        </div>
+
+        <div class="card item-flex">
+            <img src="certificate3-logo.png" alt="Certificate 3">
+            <div>
+                <p><strong>Python for Data Science</strong><br>Issued by IBM | 2023</p>
             </div>
         </div>
     </div>
