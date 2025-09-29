@@ -22,6 +22,7 @@
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
+            animation: movingbackground 10s infinite;
         }
 
         h1, h2, h3 {
@@ -129,6 +130,12 @@
                 margin-bottom: 10px;
             }
         }
+
+        @keyframes movingbackground {
+            from {top: 0px;}
+            to {top: 200px;}
+        }
+        
     </style>
 </head>
 <body>
