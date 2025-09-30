@@ -184,7 +184,7 @@
 
     <!-- Projects Section -->
     <div id="projects" class="center-container">
-        <h2 class="w3-wide">PROJECTS</h2>
+        <h2 class="w3-wide reveal">PROJECTS</h2>
         <div class="card item-flex">
             <img src="images/flappy-logo.png" alt="Project 1">
             <div>
@@ -229,7 +229,7 @@
 
     <!-- About Section -->
     <div id="about" class="center-container" style="padding-top: 60px;">
-        <h2 class="w3-wide">ABOUT</h2>
+        <h2 class="w3-wide reveal">ABOUT</h2>
         <div class="card">
             <p class="w3-justify">
                 I am a computer science student with an emphasis in artificial intelligence at The Master's University. 
@@ -277,7 +277,7 @@
 
     <!-- Certificates Section -->
     <div id="certificates" class="center-container" style="padding-top: 60px;">
-        <h2 class="w3-wide">CERTIFICATES</h2>
+        <h2 class="w3-wide reveal">CERTIFICATES</h2>
 
         <div class="card item-flex">
             <img src="images/coursera-logo.png" alt="Certificate 1">
@@ -287,7 +287,7 @@
             </div>
         </div>
 
-        <div class="card item-flex reveal">
+        <div class="card item-flex">
             <img src="images/coursera-logo.png" alt="Certificate 2">
             <div>
                 <p><strong>Programming with JavaScript</strong><br>Issued by Coursera</p>
@@ -338,7 +338,7 @@
 
     <!-- Contact Section -->
     <div id="contact" class="center-container" style="padding-top: 60px;">
-        <h2 class="w3-wide">CONTACT</h2>
+        <h2 class="w3-wide reveal">CONTACT</h2>
         <div class="card contact-info">
             <p><i class="fa fa-map-marker"></i> Los Angeles, US</p>
             <p><i class="fa fa-phone"></i> +1 (661) 502-7888</p>
@@ -365,8 +365,8 @@
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active');
-        // Uncomment next line if you want animation only once:
-        // observer.unobserve(entry.target);
+
+            observer.unobserve(entry.target);
           }
         });
       }, { threshold: 0.1 });
