@@ -113,6 +113,19 @@
             width: 30px;
         }
 
+        /* Start hidden */
+        .reveal {
+          opacity: 0;
+          transform: translateY(40px);
+          transition: all 0.8s ease-out;
+        }
+
+        /* When visible */
+        .reveal.active {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
         /* Responsive adjustments */
         @media screen and (max-width: 600px) {
             .item-flex {
@@ -274,7 +287,7 @@
             </div>
         </div>
 
-        <div class="card item-flex">
+        <div class="card item-flex reveal">
             <img src="images/coursera-logo.png" alt="Certificate 2">
             <div>
                 <p><strong>Programming with JavaScript</strong><br>Issued by Coursera</p>
@@ -344,6 +357,24 @@
             x.className = x.className.replace(" w3-show", "");
         }
     }
+
+    
+    const reveals = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+        // Uncomment next line if you want animation only once:
+        // observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      reveals.forEach(reveal => {
+    observer.observe(reveal);
+  });
+    
 </script>
 
 </body>
