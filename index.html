@@ -1,447 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caedmon Julian</title>
-
-    <!-- CSS Libraries -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Custom Styles -->
-    <style>
-        body {
-            /*background-color: #1f1f23;*/
-            font-family: 'Lato', sans-serif;
-            color: #fff;
-            margin: 0;
-            background-image: url('images/background.jpg');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: 130% 130%;
-            animation: movingbackground 100s infinite;
-        }
-
-        h1, h2, h3 {
-            font-family: 'Lato', sans-serif;
-            color: #fff;
-        }
-
-        a {
-            color: #4da6ff;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Navbar */
-        .w3-bar {
-            background-color: #1c1c1c;
-        }
-
-        .w3-bar a {
-            color: #fff;
-        }
-
-        .w3-bar a:hover {
-            background-color: #333;
-        }
-
-        /* Container */
-        .content-container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
-
-        /* Centered Sections */
-        .center-container {
-            text-align: center;
-        }
-
-        /* Card Styles */
-        .card {
-            background-color: #2c2c2f;
-            padding: 1.5em 4em;
-            border-radius: 12px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.5);
-            margin: 30px 50px;
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-align: center;  /* Center-align all text inside the card */
-            border: 2px solid silver;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 20px rgba(0,0,0,0.6);
-        }
-
-        /* Flex layout for Experience, Education, Certificates */
-        .item-flex {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-        }
-
-        .item-flex img {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            border-radius: 8px;
-            flex-shrink: 0;
-        }
-        
-        .item-flex div {
-            flex: 1;
-        }
-
-        /* Bullet points aligned inside */
-        .item-flex ul {
-            /*padding-left: 20px;*/
-            margin: 5px 0 10px 0;
-            list-style-position: inside;
-        }
-
-        /* Contact Info */
-        .contact-info i {
-            width: 30px;
-        }
-
-        /* Start hidden */
-        .reveal {
-          opacity: 0;
-          transform: translateY(40px);
-          transition: all 0.8s ease-out;
-        }
-
-        /* When visible */
-        .reveal.active {
-          opacity: 1;
-          transform: translateY(0);
-        }
-
-        /* Responsive adjustments */
-        @media screen and (max-width: 600px) {
-            .item-flex {
-                flex-direction: column;
-                align-items: center;
-                text-align: left;
-            }
-            .item-flex img {
-                margin-bottom: 10px;
-            }
-        }
-
-        @keyframes movingbackground {
-            0% {background-position: 0px 0px;}
-            25% {background-position: 0px -200px;}
-            50% {background-position: -200px -200px;}
-            75% {background-position: -200px 0px;}
-            100% {background-position: 0px 0px;}
-        }
-        
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caedmon Julian</title>
+  <meta name="description" content="Caedmon Julian - Computer Science student and developer. Explore my portfolio in web development, game design, and more about me.">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <style>
+    body {
+      background: linear-gradient(to right, #111, #1a1f2c);
+      color: #aaa;
+      font-family: Verdana, Geneva, sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    header {
+      background: linear-gradient(to right, #111, #1a1f2c);
+      position: fixed;
+      width: 100%;
+      z-index: 10;
+      top: 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+      border-bottom: 1px solid #333;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #f2f2f2;
+      padding: 14px 20px;
+      display: block;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, background 0.3s;
+    }
+    nav a:hover {
+      background: linear-gradient(to right, #2a3f5f, #1f2b45);
+      color: #ddd;
+    }
+    main {
+      max-width: 1000px;
+      margin: 100px auto 50px auto;
+      padding: 0 20px;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    #home {
+      padding: 120px 0 120px 0;
+      text-align: center;
+    }
+    #home h1 {
+      background: linear-gradient(90deg, #00aaff, #00ffdd); /* vibrant blue → teal */
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+      font-size: 4rem;
+      margin: 0;
+    }
+    #home p {
+      color: #bbb;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+    h2, h3 {
+      text-align: center;
+      background: linear-gradient(to right, #eee, #dde);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .card {
+      background: linear-gradient(160deg, #1a1a1a, #222428);
+      border: 1px solid #333;
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px 0;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+      transition: transform 0.2s, box-shadow 0.2s border-color 0.3s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.6), 0 0 15px #2a3f5f;
+      border-color: #2a3f5f;
+    }
+    .project {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    .project img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      border-radius: 8px;
+      border: 1px solid #444;
+      background: #fff;
+    }
+    .project div {
+      flex: 1;
+    }
+    a {
+      color: #aaa;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    a:hover {
+      text-decoration: underline;
+      color: #ccc;
+    }
+    .contact {
+      flex-direction: column;
+      align-items: center;    
+      text-align: center;
+    }
+    .contact i {
+      margin-right: 8px;
+      color: #999;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      color: #777;
+      border-top: 1px solid #333;
+      background: linear-gradient(to right, #111, #1a1f2c);
+    }
+    @media (max-width: 600px) {
+      .project {
+        flex-direction: column;
+        text-align: center;
+      }
+      #home h1 {
+        font-size: 3rem;
+      }
+    }
+  </style>
 </head>
 <body>
+  <header>
+    <nav>
+      <a href="javascript:void(0)" onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'});">Home</a>
+      <a href="javascript:void(0)" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'});">Projects</a>
+      <a href="javascript:void(0)" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'});">About</a>
+      <a href="javascript:void(0)" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Contact</a>
+    </nav>
+  </header>
 
-<!-- Navbar -->
-<div class="w3-top">
-    <div class="w3-bar w3-card">
-        <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" 
-           href="javascript:void(0)" onclick="toggleNav()" title="Toggle Navigation Menu">
-           <i class="fa fa-bars"></i>
-        </a>
-        <a href="#" class="w3-bar-item w3-button w3-padding-large">HOME</a>
-        <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hide-small">PROJECTS</a>
-        <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hide-small">ABOUT</a>
-        <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hide-small">CONTACT</a>
-    </div>
-</div>
+  <main>
+    <section id="home">
+      <h1>Caedmon Julian</h1>
+      <p>Computer Science Student | Game/Web Developer | Software Developer</p>
+    </section>
 
-<!-- Navbar on small screens -->
-<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px;">
-    <a href="#projects" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">PROJECTS</a>
-    <a href="#about" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">ABOUT</a>
-    <a href="#contact" class="w3-bar-item w3-button w3-padding-large" onclick="toggleNav()">CONTACT</a>
-</div>
+    <section id="projects">
+      <h2>Projects</h2>
+      <div class="card project">
+        <div>
+          <h3>Repro Flappy Bird</h3>
+          <p>Unity WebGL Build using C#</p>
+          <a href="https://ninjacad.github.io/Flappy-Pages/" target="_blank">View Project</a>
+        </div>
+        <img src="images/flappy-logo.png" alt="Flappy Bird"/>
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Space Dodge</h3>
+          <p>Unity WebGL Build using C#</p>
+          <a href="https://ninjacad.github.io/Dodge-Pages/" target="_blank">View Project</a>
+        </div>
+        <img src="images/dodge-logo.png" alt="Space Dodge"/>
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Time Puzzle</h3>
+          <p>Unity WebGL Build using C#</p>
+          <a href="https://ninjacad.github.io/Time-Pages/" target="_blank">View Project</a>
+        </div>
+        <img src="images/time-logo.png" alt="Time Puzzle">
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Tree Drawing</h3>
+          <p>Turtle Graphics using Python</p>
+          <a href="https://www.pythonsandbox.com/code/pythonsandbox_u163168_ukvwcMTaExcXysfa132CttD3_v0.py" target="_blank">View Project</a>
+        </div>
+        <img src="images/tree-logo.png" alt="Tree Drawing">
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Website Design</h3>
+          <p>Using Finalweb</p>
+          <a href="https://www.julian-julian.com/" target="_blank">View Project</a>
+        </div>
+        <img src="images/julian-logo.png" alt="Finalweb">
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Website Design</h3>
+          <p>Github using HTML and CSS</p>
+          <a href="https://www.github.com/NinjaCad/portfolio" target="_blank">View Project</a>
+        </div>
+        <img src="images/portfolio-logo.png" alt="Github">
+      </div>
+    </section>
 
-<!-- Page Content -->
-<div class="content-container">
+    <section id="about">
+      <h2>About</h2>
+      <div class="card">
+        <p>
+          I am a freshman Computer Science student with an emphasis in Artificial Intelligence at The Master's University. 
+          I enjoy building creative projects, from designing and programming games to developing websites and other interactive applications. 
+          My passion is combining problem-solving with creativity to bring ideas to life through code.
+        </p>
+      </div>
+      <h3>Experience</h3>
+      <div class="card project">
+        <div>
+          <h3>Six Flags – Food And Beverage Team Member</h3>
+          <p>
+            March 2024 – August 2025<br>
+            Santa Clarita, CA
+          </p>
+        </div>
+        <img src="images/sixflags-logo.png" alt="Six Flags">
+      </div>
+      <h3>Education</h3>
+      <div class="card project">
+        <div>
+          <h3>The Master's University</h3>
+          <p>
+            2025 – Present
+          </p>
+          <p>
+            - Pursuing Bachelor's Degree | Computer Science<br>
+            - Emphasis in Artificial Intelligence<br>
+            - Currently Enrolled<br>
+          </p>
+        </div>
+        <img src="images/masters-university-logo.png" alt="The Master's University">
+      </div>
+      <div class="card project">
+        <div>
+          <h3>West Ranch High School</h3>
+          <p>
+            2021 – 2025
+          </p>
+          <p>
+            - Graduated Summa Cum Laude | GPA 4.5<br>
+            - AP Scholar with Honor Award<br>
+            - Awards from CSF and NHS<br>
+          </p>
+        </div>
+        <img src="images/west-ranch-logo.png" alt="West Ranch High School">
+      </div>
+      <h3>Certificates</h3>
+      <div class="card project">
+        <div>
+          <h3>Introduction to Front-End Development</h3>
+          <p>
+            Issued by Coursera
+          </p>
+          <a href="https://www.coursera.org/account/accomplishments/records/RFSMNXZEN7PU" target="_blank">View Certificate</a>
+        </div>
+        <img src="images/coursera-logo.png" alt="Certificate 1">
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Programming with JavaScript</h3>
+          <p>
+            Issued by Coursera
+          </p>
+          <a href="https://www.coursera.org/account/accomplishments/records/QJQZK4MZZ3XC" target="_blank">View Certificate</a>
+        </div>
+        <img src="images/coursera-logo.png" alt="Certificate 2">
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Version Control</h3>
+          <p>
+            Issued by Coursera
+          </p>
+          <a href="https://www.coursera.org/account/accomplishments/records/3WOJLSKRK0QJ" target="_blank">View Certificate</a>
+        </div>
+        <img src="images/coursera-logo.png" alt="Certificate 3">
+      </div>
+      <div class="card project">
+        <div>
+          <h3>HTML and CSS in Depth</h3>
+          <p>
+            Issued by Coursera
+          </p>
+          <a href="https://www.coursera.org/account/accomplishments/records/028M3N111C38" target="_blank">View Certificate</a>
+        </div>
+        <img src="images/coursera-logo.png" alt="Certificate 4">
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Data Science with Python</h3>
+          <p>
+            Issued by CodeHS
+          </p>
+          <a href="datascience.png" target="_blank">View Certificate</a>
+        </div>
+        <img src="images/coursera-logo.png" alt="Certificate 5">
+      </div>
+      <div class="card project">
+        <div>
+          <h3>Advanced Cybersecurity</h3>
+          <p>
+            Issued by CodeHS
+          </p>
+          <a href="advancedcybersecurity.png" target="_blank">View Certificate</a>
+        </div>
+        <img src="images/coursera-logo.png" alt="Certificate 6">
+      </div>
+      <div class="card project">
+        <div>
+          <h3>AP Computer Science A/Princples</h3>
+          <p>
+            Issued by College Board
+          </p>
+         <a href="apscore.pdf" target="_blank">View Certificate</a>
+        </div>
+        <img src="images/coursera-logo.png" alt="Certificate 7">
+      </div>
+    </section>
 
-    <!-- Title Section -->
-    <div class="center-container" style="padding-bottom: 60px;">
-        <h1 class="w3-wide"><strong>Caedmon Julian</strong></h1>
-        <p>Computer Science Student  |  Game/Web Developer  |  Software Developer</p>
-    </div>
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="card contact">
+        <p><i class="fa fa-map-marker"></i> Los Angeles, US</p>
+        <p><i class="fa fa-envelope"></i> caedmon.julian@gmail.com</p>
+      </div>
+    </section>
+  </main>
 
-    <!-- Projects Section -->
-    <div id="projects" class="center-container">
-        <h2 class="w3-wide reveal"><strong>PROJECTS</strong></h2>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>Repro Flappy Bird</strong>
-                </h4>
-                <p>
-                    Unity WebGL Build using C#<br>
-                </p>
-                <a href="https://ninjacad.github.io/Flappy-Pages/" target="_blank">View Project</a>
-            </div>
-            <img src="images/flappy-logo.png" alt="Project 1">
-        </div>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>Space Dodge</strong>
-                </h4>
-                <p>
-                    Unity WebGL Build using C#<br>
-                </p>
-                <a href="https://ninjacad.github.io/Dodge-Pages/" target="_blank">View Project</a>
-            </div>
-            <img src="images/dodge-logo.png" alt="Project 2">
-        </div>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>Time Puzzle</strong>
-                </h4>
-                <p>
-                    Unity WebGL Build using C#<br>
-                </p>
-                <a href="https://ninjacad.github.io/Time-Pages/" target="_blank">View Project</a>
-            </div>
-            <img src="images/time-logo.png" alt="Project 3">
-        </div>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>Tree Drawing</strong>
-                </h4>
-                <p>
-                    Turtle Graphics using Python<br>
-                </p>
-                <a href="https://www.pythonsandbox.com/code/pythonsandbox_u163168_ukvwcMTaExcXysfa132CttD3_v0.py" target="_blank">View Project</a>
-            </div>
-            <img src="images/tree-logo.png" alt="Project 4">
-        </div>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>Website Design</strong><br>
-                </h4>
-                <p>
-                    Using Finalweb<br>
-                </p>
-                <a href="https://www.julian-julian.com/" target="_blank">View Project</a>
-            </div>
-            <img src="images/julian-logo.png" alt="Project 5">
-        </div>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>Website Design</strong><br>
-                </h4>
-                <p>
-                    Github using HTML, CSS, and JavaScript<br>
-                </p>
-                <a href="https://www.github.com/NinjaCad/portfolio" target="_blank">View Project</a>
-            </div>
-            <img src="images/portfolio-logo.png" alt="Project 6">
-        </div>
-    </div>
-
-    <!-- About Section -->
-    <div id="about" class="center-container" style="padding-top: 60px;">
-        <h2 class="w3-wide reveal"><strong>ABOUT</strong></h2>
-        <div class="card">
-            <p class="w3-justify">
-                I am a freshman Computer Science student with an emphasis in Artificial Intelligence at The Master's University. 
-                I enjoy building creative projects, from designing and programming games to developing websites and other interactive applications. 
-                My passion is combining problem-solving with creativity to bring ideas to life through code.
-            </p>
-        </div>
-
-        <!-- Experience -->
-        <h3 class="reveal"><strong>Experience</strong></h3>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>Six Flags – Food And Beverage Team Member</strong>
-                </h4>
-                <p>
-                    March 2024 – August 2025<br>
-                    Santa Clarita, CA
-                </p>
-            </div>
-            <img src="images/sixflags-logo.png" alt="Six Flags">
-        </div>
-
-        <!-- Education -->
-        <h3 class="reveal"><strong>Education</strong></h3>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>The Master's University</strong>
-                </h4>
-                <p>
-                    2025 – Present
-                </p>
-                <ul>
-                    <li>Pursuing Bachelor's Degree | Computer Science</li>
-                    <li>Emphasis in Artificial Intelligence</li>
-                    <li>Currently Enrolled</li>
-                </ul>
-            </div>
-            <img src="images/masters-university-logo.png" alt="The Master's University">
-        </div>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>West Ranch High School</strong>
-                </h4>
-                <p>
-                    2021 – 2025
-                </p>
-                <ul>
-                    <li>Graduated Summa Cum Laude | GPA 4.5</li>
-                    <li>AP Scholar with Honor Award</li>
-                    <li>Awards from CSF and NHS</li>
-                </ul>
-            </div>
-            <img src="images/west-ranch-logo.png" alt="West Ranch High School">
-        </div>
-
-        <!-- Certicates -->
-        <h3 class="reveal"><strong>Certificates</strong></h3>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>Introduction to Front-End Development</strong>
-                </h4>
-                <p>
-                    Issued by Coursera
-                </p>
-                <a href="https://www.coursera.org/account/accomplishments/records/RFSMNXZEN7PU" target="_blank">View Certificate</a>
-            </div>
-            <img src="images/coursera-logo.png" alt="Certificate 1">
-        </div>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>Programming with JavaScript</strong>
-                </h4>
-                <p>
-                    Issued by Coursera
-                </p>
-                <a href="https://www.coursera.org/account/accomplishments/records/QJQZK4MZZ3XC" target="_blank">View Certificate</a>
-            </div>
-            <img src="images/coursera-logo.png" alt="Certificate 2">
-        </div>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>Version Control</strong>
-                </h4>
-                <p>
-                    Issued by Coursera
-                </p>
-                <a href="https://www.coursera.org/account/accomplishments/records/3WOJLSKRK0QJ" target="_blank">View Certificate</a>
-            </div>
-            <img src="images/coursera-logo.png" alt="Certificate 3">
-        </div>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>HTML and CSS in Depth</strong>
-                </h4>
-                <p>
-                    Issued by Coursera
-                </p>
-                <a href="https://www.coursera.org/account/accomplishments/records/028M3N111C38" target="_blank">View Certificate</a>
-            </div>
-            <img src="images/coursera-logo.png" alt="Certificate 4">
-        </div>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>Data Science with Python</strong>
-                </h4>
-                <p>
-                    Issued by CodeHS
-                </p>
-                <a href="datascience.png" target="_blank">View Certificate</a>
-            </div>
-            <img src="images/codehs-logo.png" alt="Certificate 5">
-        </div>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>Advanced Cybersecurity</strong>
-                </h4>
-                <p>
-                    Issued by CodeHS
-                </p>
-                <a href="advancedcybersecurity.png" target="_blank">View Certificate</a>
-            </div>
-            <img src="images/codehs-logo.png" alt="Certificate 6">
-        </div>
-        <div class="card item-flex">
-            <div>
-                <h4>
-                    <strong>AP Computer Science A/Princples</strong>
-                </h4>
-                <p>
-                    Issued by College Board
-                </p>
-                <a href="apscore.pdf" target="_blank">View Certificate</a>
-            </div>
-            <img src="images/collegeboard-logo.png" alt="Certificate 7">
-        </div>
-    </div>
-
-    <!-- Contact Section -->
-    <div id="contact" class="center-container" style="padding-top: 60px;">
-        <h2 class="w3-wide reveal"><strong>CONTACT</strong></h2>
-        <div class="card contact-info">
-            <p><i class="fa fa-map-marker"></i> Los Angeles, US</p>
-            <p><i class="fa fa-envelope"></i> caedmon.julian@gmail.com</p>
-        </div>
-    </div>
-</div>
-
-<!-- JavaScript -->
-<script>
-    function toggleNav() {
-        var x = document.getElementById("navDemo");
-        if (x.className.indexOf("w3-show") === -1) {
-            x.className += " w3-show";
-        } else {
-            x.className = x.className.replace(" w3-show", "");
-        }
-    }
-
-    
-    const reveals = document.querySelectorAll('.reveal');
-
-    const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('active');
-          } else {
-        //entry.target.classList.remove('active');
-          }
-        });
-      }, { threshold: 0.1 });
-
-      reveals.forEach(reveal => {
-    observer.observe(reveal);
-  });
-    
-</script>
-
+  <footer>
+    <p>
+      © 2025 Caedmon Julian. All rights reserved.<br>
+      Hosted using Github Pages
+    </p>
+  </footer>
 </body>
 </html>
