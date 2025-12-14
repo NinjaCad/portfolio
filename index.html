@@ -1,356 +1,379 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Caedmon Julian</title>
-  <meta name="description" content="Caedmon Julian - Computer Science student and developer. Explore my portfolio in web development, game design, and more about me.">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Caedmon Julian — Portfolio</title>
+  <meta name="description" content="Personal portfolio showcasing projects, skills and contact information." />
   <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+
   <style>
-    body {
-      background: linear-gradient(to right, #111, #1a1f2c);
-      color: #aaa;
-      font-family: Verdana, Geneva, sans-serif;
-      margin: 0;
-      line-height: 1.6;
-      min-height: 100vh;
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent:#00d2ff; /* light blue */
+      --glass: rgba(255,255,255,0.04);
+      --radius:14px;
+      --max:1100px;
+      --fw-regular: 400;
+      --fw-strong:700;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
     }
-    header {
-      background: linear-gradient(to right, #111, #1a1f2c);
-      position: fixed;
-      width: 100%;
-      z-index: 10;
-      top: 0;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
-      border-bottom: 1px solid #333;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    nav a {
-      color: #f2f2f2;
-      padding: 14px 20px;
-      display: block;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s, background 0.3s;
-    }
-    nav a:hover {
-      background: linear-gradient(to right, #2a3f5f, #1f2b45);
-      color: #ddd;
-    }
-    main {
-      max-width: 1000px;
-      margin: 100px auto 50px auto;
-      padding: 0 20px;
-    }
-    section {
-      margin-bottom: 60px;
-    }
-    #home {
-      padding: 120px 0 120px 0;
-      text-align: center;
-    }
-    #home h1 {
-      background: linear-gradient(90deg, #00d2ff, #3a7bd5);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-      font-size: 4rem;
-      margin: 0;
-    }
-    #home p {
-      color: #bbb;
-      font-size: 1.2rem;
-      margin-top: 20px;
-    }
-    h2, h3 {
-      text-align: center;
-      background: linear-gradient(to right, #eee, #dde);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-    .card {
-      background: linear-gradient(160deg, #1a1a1a, #222428);
-      border: 1px solid #333;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 20px 0;
-      gap: 20px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-      transition: 0.3s;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      text-align: center;
-      flex-flow: row wrap;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 12px #00d2ff60;
-      border-color: #00d2ff;
-    }
-    .card img {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      border-radius: 8px;
-      border: 1px solid #444;
-      background: #fff;
-    }
-    .card div {
-      flex: auto;
+
+    /* Reset */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background: linear-gradient(180deg,#071028 0%, var(--bg) 100%);
+      color:#e6eef6;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.45;
+      padding:32px 18px;
+      display:flex;justify-content:center;
     }
     a {
+      color: inherit;
+      text-decoration: inherit;
+    }
+
+    .link {
       color: #00d2ff;
       text-decoration: none;
       font-weight: bold;
     }
-    a:hover {
+    .link:hover {
       text-decoration: underline;
     }
-    .contact {
-      flex-direction: column;
-      align-items: center;    
-      text-align: center;
+
+    .wrap{width:100%;max-width:var(--max)}
+
+    /* Navbar */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:grid;place-items:center;color:#04263a;font-weight:800}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600}
+    .cta{background:linear-gradient(90deg,var(--accent),#60a5fa);padding:10px 14px;border-radius:10px;color:#04263a;font-weight:700;text-decoration:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:36px}
+    .hero-left h1{font-size:clamp(30px,5vw,44px);margin:0 0 10px}
+    .hero-left p{color:var(--muted);margin:0 0 18px}
+    .actions{display:flex;gap:12px}
+    .button{padding:11px 14px;border-radius:10px;text-decoration:none;font-weight:700}
+    .button.primary{background:var(--accent);color:#052025}
+    .button.ghost{border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* Me card */
+    .me-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:16px;padding:18px;backdrop-filter:blur(6px);box-shadow:0 6px 20px rgba(2,6,23,0.6);border: 0.1px solid #222}
+    .avatar{width:100%;height:240px;border-radius:10px;background-image:linear-gradient(180deg,#062436,#08334b);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:20px}
+    .meta{display:flex;justify-content:space-between;align-items:center;margin-top:12px}
+    .meta div{font-size:13px;color:var(--muted)}
+
+    /* Quick skills */
+    .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+    .chip{background:var(--glass);padding:8px 10px;border-radius:999px;font-weight:600;color:var(--muted);font-size:13px}
+
+    /* Featured projects */
+    section.projects{margin-bottom:36px}
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .project{background:var(--card);border-radius:12px;padding:14px;min-height:130px;display:flex;flex-direction:column;justify-content:space-between;box-shadow:0 6px 18px rgba(2,6,23,0.6);border: 0.1px solid #222}
+    .project h3{margin:0 0 6px}
+    .project p{margin:0;color:var(--muted);font-size:14px}
+    .project .tech{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+    .tag{font-size:12px;background:rgba(255,255,255,0.03);padding:6px 8px;border-radius:8px;color:var(--muted)}
+    .project:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 12px #00d2ff60;
+      border: 1px solid #00d2ff;
+      transition: 0.3s;
     }
-    footer {
-      text-align: center;
-      padding: 20px;
-      color: #777;
-      border-top: 1px solid #333;
-      background: linear-gradient(to right, #111, #1a1f2c);
+
+    /* About & timeline */
+    .about{display:grid;grid-template-columns:1fr 340px;gap:20px;margin-bottom:36px}
+    .card{background:var(--card);padding:18px;border-radius:12px;border: 0.1px solid #222}
+    .timeline{display:flex;flex-direction:column;gap:10px}
+    .tl-item{display:flex;gap:12px;align-items:flex-start}
+    .tl-item .dot{width:10px;height:10px;border-radius:50%;background:var(--accent);margin-top:6px}
+    .tl-item p{margin:0;color:var(--muted);font-size:14px}
+
+    /* Skills */
+    .skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .skill-bar{background:rgba(255,255,255,0.03);height:10px;border-radius:999px;overflow:hidden}
+    .skill-bar > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#60a5fa)}
+
+    /* Contact */
+    .contact-form{display:grid;gap:10px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px;border-radius:8px;color:inherit}
+    textarea{min-height:120px}
+    .footer{display:flex;justify-content:space-between;align-items:center;margin-top:22px;color:var(--muted);font-size:13px;padding:20px}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr 1fr}
+      .projects-grid{grid-template-columns:repeat(2,1fr)}
+      .about{grid-template-columns:1fr}
+      .hero{grid-template-columns:1fr}
     }
-    @media (max-width: 600px) {
-      #home h1 {
-        font-size: 3rem;
-      }
+
+    @media (max-width:640px){
+      body{padding:18px}
+      .projects-grid{grid-template-columns:1fr}
+      header{flex-direction:column;align-items:flex-start;gap:12px}
+      nav{flex-wrap:wrap}
     }
+
+    /* Subtle appearance animation */
+    .fade-up{opacity:0;transform:translateY(8px);animation:fadeInUp .6s forwards}
+    @keyframes fadeInUp{to{opacity:1;transform:none}}
+
   </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <a href="javascript:void(0)" onclick="document.getElementById('home').scrollIntoView({behavior: 'smooth'});">Home</a>
-      <a href="javascript:void(0)" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'});">Projects</a>
-      <a href="javascript:void(0)" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'});">About</a>
-      <a href="javascript:void(0)" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});">Contact</a>
-    </nav>
-  </header>
+  <div class="wrap">
 
-  <main>
-    <section id="home">
-      <h1>Caedmon Julian</h1>
-      <p>Computer Science Student | Game/Web Developer | Software Developer</p>
-    </section>
+    <header class="fade-up">
+      <div class="brand">
+        <div class="logo">CJ</div>
+        <div>
+          <div style="font-weight:800">Caedmon Julian</div>
+          <div style="font-size:13px;color:var(--muted)">Computer Science Student • Software Developer</div>
+        </div>
+      </div>
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <div class="card">
-        <div>
-          <h3>Repro Flappy Bird</h3>
-          <p>Unity WebGL Build using C#</p>
-          <a href="https://ninjacad.github.io/Flappy-Pages" target="_blank">View Project</a>
-        </div>
-        <img src="images/flappy-logo.png" alt="Flappy Bird">
-      </div>
-      <div class="card">
-        <div>
-          <h3>Space Dodge</h3>
-          <p>Unity WebGL Build using C#</p>
-          <a href="https://ninjacad.github.io/Dodge-Pages" target="_blank">View Project</a>
-        </div>
-        <img src="images/dodge-logo.png" alt="Space Dodge">
-      </div>
-      <div class="card">
-        <div>
-          <h3>Time Puzzle</h3>
-          <p>Unity WebGL Build using C#</p>
-          <p>
-            - Navigating the Unity interface and scenes<br>
-            - Writing C# scripts for gameplay and controls<br>
-            - Export and run Unity games in the browser using WebGL
-          </p>
-          <a href="https://ninjacad.github.io/Time-Pages" target="_blank">View Project</a>
-        </div>
-        <img src="images/time-logo.png" alt="Time Puzzle">
-      </div>
-      <div class="card">
-        <div>
-          <h3>Graphics Generator</h3>
-          <p>Using Python</p>
-          <p>
-            - Recursion using rules to create patterns<br>
-            - Process strings and apply rewriting rules<br>
-            - Learned turtle library<br>
-          </p>
-          <a href="https://ninjacad.github.io/turtle/movie" target="_blank">View Project</a>
-        </div>
-        <img src="images/tree-logo.png" alt="Tree Drawing">
-      </div>
-      <div class="card">
-        <div>
-          <h3>Website Design</h3>
-          <p>
-            Using
-            <a href="https://www.finalweb.com" target="_blank">Finalweb</a>
-          </p>
-          <p>
-            - Finalweb is a content-management system<br>
-            - Learned web structure & organization<br>
-            - Integrated media libraries<br>
-          </p>
-          <a href="https://www.julian-julian.com" target="_blank">View Project</a>
-        </div>
-        <img src="images/julian-logo.png" alt="Finalweb">
-      </div>
-    </section>
+      <nav>
+        <a href="javascript:void(0)" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">Projects</a>
+        <a href="javascript:void(0)" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">About</a>
+        <a href="javascript:void(0)" onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">Skills</a>
+        <a href="javascript:void(0)" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'});" class="cta">Contacts</a>
+      </nav>
+    </header>
 
-    <section id="about">
-      <h2>About</h2>
-      <div class="card">
-        <p>
-          I am a freshman Computer Science student with an emphasis in Artificial Intelligence at The Master's University. 
-          I enjoy building creative projects, from designing and programming games to developing websites and other interactive applications. 
-          My passion is combining problem-solving with creativity to bring ideas to life through code.
-        </p>
-      </div>
-      <h3>Experience</h3>
-      <div class="card">
-        <div>
-          <h3>Six Flags – Food And Beverage Team Member</h3>
-          <p>
-            March 2024 – August 2025<br>
-            Santa Clarita, CA
-          </p>
-        </div>
-        <img src="images/sixflags-logo.png" alt="Six Flags">
-      </div>
-      <h3>Education</h3>
-      <div class="card">
-        <div>
-          <h3>The Master's University</h3>
-          <p>
-            2025 – Present
-          </p>
-          <p>
-            - Pursuing Bachelor's Degree | Computer Science<br>
-            - Emphasis in Artificial Intelligence<br>
-            - Currently Enrolled<br>
-          </p>
-        </div>
-        <img src="images/masters-university-logo.png" alt="The Master's University">
-      </div>
-      <div class="card">
-        <div>
-          <h3>West Ranch High School</h3>
-          <p>
-            2021 – 2025
-          </p>
-          <p>
-            - Graduated Summa Cum Laude | GPA 4.5<br>
-            - AP Scholar with Honor Award<br>
-            - Awards from CSF and NHS<br>
-          </p>
-        </div>
-        <img src="images/west-ranch-logo.png" alt="West Ranch High School">
-      </div>
-      <h3>Certificates</h3>
-      <div class="card">
-        <div>
-          <h3>Introduction to Front-End Development</h3>
-          <p>
-            Issued by Coursera
-          </p>
-          <a href="https://www.coursera.org/account/accomplishments/records/RFSMNXZEN7PU" target="_blank">View Certificate</a>
-        </div>
-        <img src="images/coursera-logo.png" alt="Certificate 1">
-      </div>
-      <div class="card">
-        <div>
-          <h3>Programming with JavaScript</h3>
-          <p>
-            Issued by Coursera
-          </p>
-          <a href="https://www.coursera.org/account/accomplishments/records/QJQZK4MZZ3XC" target="_blank">View Certificate</a>
-        </div>
-        <img src="images/coursera-logo.png" alt="Certificate 2">
-      </div>
-      <div class="card">
-        <div>
-          <h3>Version Control</h3>
-          <p>
-            Issued by Coursera
-          </p>
-          <a href="https://www.coursera.org/account/accomplishments/records/3WOJLSKRK0QJ" target="_blank">View Certificate</a>
-        </div>
-        <img src="images/coursera-logo.png" alt="Certificate 3">
-      </div>
-      <div class="card">
-        <div>
-          <h3>HTML and CSS in Depth</h3>
-          <p>
-            Issued by Coursera
-          </p>
-          <a href="https://www.coursera.org/account/accomplishments/records/028M3N111C38" target="_blank">View Certificate</a>
-        </div>
-        <img src="images/coursera-logo.png" alt="Certificate 4">
-      </div>
-      <div class="card">
-        <div>
-          <h3>Data Science with Python</h3>
-          <p>
-            Issued by CodeHS
-          </p>
-          <a href="datascience.png" target="_blank">View Certificate</a>
-        </div>
-        <img src="images/coursera-logo.png" alt="Certificate 5">
-      </div>
-      <div class="card">
-        <div>
-          <h3>Advanced Cybersecurity</h3>
-          <p>
-            Issued by CodeHS
-          </p>
-          <a href="advancedcybersecurity.png" target="_blank">View Certificate</a>
-        </div>
-        <img src="images/coursera-logo.png" alt="Certificate 6">
-      </div>
-      <div class="card">
-        <div>
-          <h3>AP Computer Science A/Princples</h3>
-          <p>
-            Issued by College Board
-          </p>
-         <a href="apscore.pdf" target="_blank">View Certificate</a>
-        </div>
-        <img src="images/coursera-logo.png" alt="Certificate 7">
-      </div>
-    </section>
+    <main>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <div class="card contact">
-        <p>
-          📍 <a href="https://www.google.com/maps/search/?api=1&query=Los+Angeles" target="_blank" rel="noopener noreferrer">Los Angeles, CA</a><br>
-          ✉️ <a href="mailto:caedmon.julian@gmail.com">caedmon.julian@gmail.com</a><br>
-          🔗 <a href="https://www.linkedin.com/in/caedmonjulian" target="_blank" rel="noopener noreferrer">LinkedIn</a><br>
-          📸 <a href="https://www.instagram.com/caedmonjulian" target="_blank" rel="noopener noreferrer">Instagram</a>
-        </p>
-      </div>
-    </section>
-  </main>
+      <section class="hero">
+        <div class="hero-left fade-up">
+          <h1>Hello, I’m <span style="background:linear-gradient(90deg, var(--accent), #3a7bd5);-webkit-background-clip: text;-webkit-text-fill-color: transparent">Caedmon Julian</span></h1>
+          <p>I build a variety of websites, programs, and games. I am eager to learn new things and make things better.</p>
+          <div class="actions">
+            <a class="button primary" href="javascript:void(0)" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">View Work</a>
+            <a class="button ghost" href="javascript:void(0)" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">Get in Touch</a>
+          </div>
 
-  <footer>
-    <p>
-      © 2025 Caedmon Julian. All rights reserved.<br>
-      Hosted using
-      <a href="https://www.github.com/NinjaCad/portfolio" target="_blank">Github Pages</a>
-    </p>
-  </footer>
+          <div style="margin-top:18px">
+            <strong style="display:block">What I do</strong>
+            <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap">
+              <div class="chip">Websites</div>
+              <div class="chip">Unity Games</div>
+              <div class="chip">Algorithms</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="me-card fade-up">
+          <div class="avatar">
+            <img src="images/portrait.jpeg" alt="portrait">
+          </div>
+          <div class="meta">
+            <div>
+              <div style="font-weight:700">Software Developer</div>
+              <div style="font-size:13px;color:var(--muted)">Los Angeles, CA</div>
+            </div>
+            <div style="text-align:right">
+              <div style="font-weight:700">Open to work</div>
+              <div style="font-size:13px;color:var(--muted)">Freelance · Contract · PT</div>
+            </div>
+          </div>
+
+          <div class="chips">
+            <div class="chip">C#</div>
+            <div class="chip">HTML/CSS</div>
+            <div class="chip">Python</div>
+            <div class="chip">JavaScript</div>
+          </div>
+        </aside>
+      </section>
+
+      <section id="projects" class="projects fade-up">
+        <h2 style="margin-top:0">Featured Projects</h2>
+        <div class="projects-grid">
+
+          <article class="project">
+            <a href="https://ninjacad.github.io/Time-Pages" target="_blank">
+              <div>
+                <h3>Time Puzzle</h3>
+                <p>Simple top down puzzle game using save states.</p>
+              </div>
+              <div>
+                <div class="tech">
+                  <span class="tag">Unity</span>
+                  <span class="tag">WebGL</span>
+                  <span class="tag">C#</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="project">
+            <a href="https://ninjacad.github.io/turtle/movie" target="_blank">
+              <div>
+                <h3>Graphics Generator</h3>
+                <p>Recursion using rules to create patterns.</p>
+              </div>
+              <div>
+                <div class="tech">
+                  <span class="tag">Python</span>
+                  <span class="tag">Turtle library</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+          <article class="project">
+            <a href="https://ninjacad.github.io/Dodge-Pages" target="_blank">
+              <div>
+                <h3>Space Dodge</h3>
+                <p>Simple 2d side view game aimed to dodge radomly generated ships.</p>
+              </div>
+              <div>
+                <div class="tech">
+                  <span class="tag">Unity</span>
+                  <span class="tag">WebGL</span>
+                  <span class="tag">C#</span>
+                </div>
+              </div>
+            </a>
+          </article>
+
+        </div>
+
+        <!--<div style="margin-top:14px;display:flex;justify-content:center">
+          <a href="#projects" class="button ghost">See all projects</a>
+        </div>-->
+      </section>
+
+
+      <section id="about" class="about fade-up">
+        <div class="card">
+          <h2>About</h2>
+          <p style="color:var(--muted)">I am a freshman Computer Science student with an emphasis in Artificial Intelligence at The Master's University. I enjoy building creative projects, from designing and programming games to developing websites and other interactive applications. My passion is combining problem-solving with creativity to bring ideas to life through code.</p>
+
+          <h3 style="margin-top:18px">Experience highlights</h3>
+          <div class="timeline">
+            <div class="tl-item">
+              <div class="dot"></div>
+              <div>
+                <strong>2023 - Present • Indepdent IT Technician</strong>
+                <p>Built and fixed computers, servers, and printers at local buisnesses</p>
+              </div>
+            </div>
+
+            <div class="tl-item">
+              <div class="dot"></div>
+              <div>
+                <strong>2024 - 2025 • Food And Beverage Team Member</strong>
+                <p>Open/close, take orders, cook, and restock at Six Flags Santa Clarita</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="card">
+          <h3>Quick facts</h3>
+          <p style="color:var(--muted);margin-bottom:10px">Education: Currently pursuing B.S. Computer Science — The Master's University</p>
+          <p style="color:var(--muted);margin-bottom:10px">Interests: AI, Web, Front-End</p>
+
+          <h3 style="margin-top:12px">Contact</h3>
+          <p style="color:var(--muted);margin-bottom:6px">Email: <a href="mailto:caedmon.julian@gmail.com" class="link">caedmon.julian@gmail.com</a></p>
+          <p style="color:var(--muted)">LinkedIn: <a href="https://www.linkedin.com/in/caedmonjulian" target="_blank" rel="noopener noreferrer" class="link">linkedin.com/in/caedmonjulian</a></p>
+          <p style="color:var(--muted)">Instagram: <a href="https://www.instagram.com/caedmonjulian" target="_blank" rel="noopener noreferrer" class="link">@caedmonjulian</a></p>
+        </aside>
+      </section>
+
+      <section id="skills" class="fade-up">
+        <h2>Skills</h2>
+        <div class="skills-grid" style="margin-top:12px">
+          <div class="card">
+            <strong>Frontend</strong>
+            <p style="color:var(--muted);margin-top:8px"> HTML · CSS</p>
+            <div style="margin-top:12px">
+              <div class="skill-bar"><i style="width:88%"></i></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <strong>Backend</strong>
+            <p style="color:var(--muted);margin-top:8px">C# · Python · Java · JavaScript</p>
+            <div style="margin-top:12px">
+              <div class="skill-bar"><i style="width:82%"></i></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <strong>Platforms</strong>
+            <p style="color:var(--muted);margin-top:8px">Unity · Github · VS Code</p>
+            <div style="margin-top:12px">
+              <div class="skill-bar"><i style="width:68%"></i></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="fade-up" style="margin-top:24px">
+        <div class="card">
+          <h2>Contact</h2>
+          <p style="color:var(--muted)">Interested in working together? Send a note — I typically reply within 2 business days.</p>
+
+          <form class="contact-form" onsubmit="handleSubmit(event)">
+            <input id="name" placeholder="Your name" required />
+            <input id="email" type="email" placeholder="Email" required />
+            <input id="subject" placeholder="Subject" />
+            <textarea id="message" placeholder="How can I help?" required></textarea>
+            <div style="display:flex;gap:8px;align-items:center;justify-content:space-between">
+              <button class="button primary" type="submit">Send message</button>
+              <div style="color:var(--muted);font-size:13px">Or email: <a href="mailto:caedmonjulian@gmail.com" class="link">caedmonjulian@gmail.com</a></div>
+            </div>
+          </form>
+
+          
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="footer fade-up">
+        <div>© <span id="year"></span> Caedmon Julian. All rights reserved.</div>
+        <div style="color:var(--muted)">Built with <a href="https://www.github.com/NinjaCad/portfolio" target="_blank" class="link">Github Pages</a></div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // small helpers
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function handleSubmit(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value;
+      const email=document.getElementById('email').value;
+      const subject=document.getElementById('subject').value || 'Message from portfolio';
+      const message=document.getElementById('message').value;
+
+      // fallback: open user's email client with prefilled content
+      const body = encodeURIComponent(`${message}\n\n— ${name} (${email})`);
+      const mailto = `mailto:caedmonjulian@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+      window.location.href = mailto;
+    }
+
+    // simple fade up animation trigger
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('.fade-up').forEach((el,i)=>{ el.style.animationDelay = (i*80)+'ms'; });
+    });
+  </script>
 </body>
 </html>
