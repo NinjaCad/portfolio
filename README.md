@@ -1,33 +1,65 @@
-# Portfolio
+# Caedmon Julian — Portfolio
 
-This repository contains the source for my personal portfolio website.
+Welcome to my personal portfolio website! This project showcases my work, skills, and experience as a Computer Science student and software developer.
 
-## What’s in this repo
-- **`index.html`** — Main page markup (projects, about, skills, contact).
-- **`styles.css`** — Site styling.
-- **`script.js`** — Small client-side helpers (sets the current year and provides a contact form `mailto:` fallback).
-- **`images/`** — Images used by the site (favicon, portrait, and other graphics).
+## 🌐 Live Site
+[View Portfolio](https://ninjacad.github.io/portfolio)
 
-## Run locally
-Because this is a static site, you can serve it with any simple web server.
+## 📌 About
+I’m a Computer Science student with a focus on Artificial Intelligence. I enjoy building creative and functional software, including games, web applications, and interactive projects.
 
-### Python
-```bash
-python -m http.server 8000
+This portfolio highlights:
+- My featured projects
+- Technical skills
+- Certifications
+- Contact information
+
+## 🚀 Features
+- Responsive modern design
+- Smooth scrolling navigation
+- Project showcase with live demos
+- Skills and experience sections
+- Contact form
+
+## 🛠️ Technologies Used
+- HTML5
+- CSS3
+- JavaScript
+- Unity (for game projects)
+- WebGL (for browser-based games)
+
+## 📂 Project Structure
 ```
-Then open: http://localhost:8000
 
-### Node
-```bash
-npx serve
+portfolio/
+│── index.html
+│── styles.css
+│── script.js
+│── images/
+
 ```
 
-## Deploy
-This site can be hosted on **GitHub Pages** (or any static host) by serving:
-- `index.html`
-- `styles.css`
-- `script.js`
-- `images/`
+## 🎮 Featured Projects
+- **Sprite Flight** – Top-down dodge game
+- **Space Dodge** – Side-view obstacle avoidance game
+- **Time Puzzle** – Puzzle game with save states (WIP)
 
-## Notes
-- The contact form uses a `mailto:` link (it opens the user’s email client rather than sending mail from a backend).
+## 📜 Certifications
+- Introduction to Front-End Development
+- Programming with JavaScript
+- Version Control
+- HTML and CSS in Depth
+- Data Science with Python
+- Advanced Cybersecurity
+
+## 📬 Contact
+- Email: caedmon.julian@gmail.com  
+- LinkedIn: https://linkedin.com/in/caedmonjulian  
+- Instagram: @caedmonjulian  
+
+## 📄 License
+This project is open source and available under the MIT License.
+
+---
+
+Feel free to explore the code and reach out if you'd like to collaborate!
