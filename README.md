@@ -43,6 +43,9 @@ portfolio/
 - **Sprite Flight** – Top-down dodge game
 - **Space Dodge** – Side-view obstacle avoidance game
 - **Time Puzzle** – Puzzle game with save states (WIP)
+- **Zork** – Terminal based Zork game
+- **Gertrude** – Terminal based blackjack game
+- **Data Structures** – Data structures and algorithm projects
 
 ## 📜 Certifications
 - Introduction to Front-End Development
