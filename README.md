@@ -55,11 +55,6 @@ portfolio/
 ## 📬 Contact
 - Email: caedmon.julian@gmail.com  
 - LinkedIn: https://linkedin.com/in/caedmonjulian  
-- Instagram: @caedmonjulian  
-
-## 📄 License
-This project is open source and available under the MIT License.
+- Github: https://github.com/NinjaCad
 
 ---
-
-Feel free to explore the code and reach out if you'd like to collaborate!
