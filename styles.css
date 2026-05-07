@@ -251,6 +251,40 @@ section.projects {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+
+/* Ensure anchor-wrapped project cards receive the same layout/styling */
+a.project {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 14px;
+  min-height: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  border: 0.1px solid #222;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Target pill in both nesting patterns (article > a > .project-link-hint and a.project > .project-link-hint) */
+.project > a .project-link-hint,
+a.project .project-link-hint {
+  margin-top: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 210, 255, 0.08);
+  border: 1px solid rgba(0, 210, 255, 0.18);
+  color: #b8f3ff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
 .project-link-hint::after {
   content: "↗";
   font-size: 12px;
