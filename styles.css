@@ -17,6 +17,9 @@ html,body{height:100%}
 body{
   margin:0;
   background: linear-gradient(180deg,#071028 0%, var(--bg) 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
   color:#e6eef6;
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
