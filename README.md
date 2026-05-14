@@ -3,7 +3,7 @@
 Welcome to my personal portfolio website! This project showcases my work, skills, and experience as a Computer Science student and software developer.
 
 ## 🌐 Live Site
-[View Portfolio](https://ninjacad.github.io/portfolio)
+[View Portfolio](https://caedmonjulian.com)
 
 ## 📌 About
 I’m a Computer Science student with a focus on Artificial Intelligence. I enjoy building creative and functional software, including games, web applications, and interactive projects.
