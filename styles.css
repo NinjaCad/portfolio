@@ -53,6 +53,8 @@ a {
 .wrap {
   width: 100%;
   max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 24px;
 }
 
 /* Navbar */
@@ -192,7 +194,7 @@ section.projects {
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
   gap: 16px;
   align-items: stretch;
 }
@@ -300,7 +302,7 @@ section.projects {
 /* Skills */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
   gap: 12px;
 }
 .skill-bar {
