@@ -11,9 +11,12 @@
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" type="module"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="wrap">
@@ -556,15 +559,27 @@
               within 2 business days.
             </p>
 
-            <form class="contact-form" onsubmit="handleSubmit(event)">
-              <input id="name" placeholder="Your name" required />
-              <input id="email" type="email" placeholder="Email" required />
-              <input id="subject" placeholder="Subject" />
+            <form
+              class="contact-form"
+              action="https://formspree.io/f/YOUR_FORM_ID"
+              method="POST"
+            >
+              <input name="name" id="name" placeholder="Name" required />
+              <input
+                name="email"
+                id="email"
+                type="email"
+                placeholder="Email"
+                required
+              />
+              <input name="subject" id="subject" placeholder="Subject" />
               <textarea
+                name="message"
                 id="message"
-                placeholder="How can I help?"
+                placeholder="Message"
                 required
               ></textarea>
+
               <div
                 style="
                   display: flex;
@@ -576,11 +591,12 @@
                 <button class="button primary" type="submit">
                   Send message
                 </button>
+
                 <div style="color: var(--muted); font-size: 13px">
                   Or email:
-                  <a href="mailto:caedmonjulian@gmail.com" class="link"
-                    >caedmonjulian@gmail.com</a
-                  >
+                  <a href="mailto:caedmon.julian@gmail.com" class="link">
+                    caedmon.julian@gmail.com
+                  </a>
                 </div>
               </div>
             </form>
